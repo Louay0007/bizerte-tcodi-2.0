@@ -29,11 +29,11 @@ The next challenge begins at Bizerte Tcodi 3.0
         />
       </div>
 
-      <div className="theme-accent-border w-full translate-y-[125vh] border-t bg-[var(--site-surface)] pb-10 text-white">
-        <h1 className="mt-10 text-center text-[15.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[16.6vw]">
+      <div className="relative w-full translate-y-[125vh] overflow-hidden bg-[var(--site-surface)] pb-10 text-white before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-32 before:bg-gradient-to-b before:from-dark before:to-transparent after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-10 after:h-32 after:bg-gradient-to-t after:from-dark after:to-transparent">
+        <h1 className="relative z-0 mt-10 text-center text-[15.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[16.6vw]">
           BIZERTE TCODI
         </h1>
-        <div className="mt-80 flex w-full flex-col items-start gap-5 px-4 font-medium lg:mt-0 lg:flex-row lg:justify-between">
+        <div className="relative z-0 mt-80 flex w-full flex-col items-start gap-5 px-4 font-medium lg:mt-0 lg:flex-row lg:justify-between">
           <div className="flex w-full items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
             <p className="w-fit text-sm">
               bizerte, tunisia <br />

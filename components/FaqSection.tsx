@@ -38,7 +38,7 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section className="theme-transition theme-accent-border w-full border-t bg-dark py-16 sm:py-24">
+    <section className="theme-transition w-full bg-dark py-16 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-8">
         <div className="lg:sticky lg:top-20 lg:self-start">
           <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.3em] text-white/40">
@@ -59,7 +59,7 @@ export default function FaqSection() {
           </a>
         </div>
 
-        <div className="max-h-[34rem] overflow-y-auto pr-1 [scrollbar-color:rgba(255,255,255,0.3)_transparent] [scrollbar-width:thin] sm:pr-3">
+        <div className="pb-3">
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem key={faq.question} value={`faq-${index}`} className="theme-accent-border rounded-xl border bg-white/[0.03] px-5 transition-colors hover:bg-[var(--theme-accent-soft)] sm:px-6">

@@ -63,7 +63,7 @@ export default function ContactSection() {
                     {enquiryTypes.map(({ value, label, description, icon: Icon }) => {
                       const selected = enquiryType === value;
                       return (
-                        <button key={value} type="button" onClick={() => setEnquiryType(value)} aria-pressed={selected} className={`rounded-2xl border bg-black p-4 text-left transition ${selected ? "border-[var(--theme-accent)]" : "border-white/10 hover:border-white/30"}`}>>
+                        <button key={value} type="button" onClick={() => setEnquiryType(value)} aria-pressed={selected} className={`rounded-2xl border bg-black p-4 text-left transition ${selected ? "border-[var(--theme-accent)]" : "border-white/10 hover:border-white/30"}`}>
                           <Icon className={`size-5 ${selected ? "theme-accent" : "text-white/55"}`} />
                           <span className="mt-3 block text-sm font-semibold text-white">{label}</span>
                           <span className="mt-1 block text-xs leading-relaxed text-white/50">{description}</span>

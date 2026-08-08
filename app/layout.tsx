@@ -7,6 +7,7 @@ import Navbar from "@/components/navbar";
 import Footer from "@/components/footer";
 import Haj from "@/components/Haj";
 import FaqSection from "@/components/FaqSection";
+import SpeakersSection from "@/components/SpeakersSection";
 import ContactSection from "@/components/ContactSection";
 import { Skiper19 } from "@/components/ui/skiper-ui/skiper19";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Navbar />
           <main className="flex-grow">{children}</main>
           <Skiper19 />
+          <SpeakersSection />
           <FaqSection />
           <ContactSection />
           <Footer />
