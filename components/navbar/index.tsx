@@ -27,7 +27,7 @@ export default function Navbar() {
     <div className="relative">
       {/* Sticky navbar with backdrop blur and shadow */}
       <nav
-        className="w-full z-50 transition-all duration-300 flex items-center justify-center px-2 xs:px-3 sm:px-6 py-3 sm:py-4 fixed top-0 left-0 navbar-gradient text-white backdrop-blur-md shadow-lg"
+        className="w-full z-50 transition-all duration-300 flex items-center justify-center px-2 xs:px-3 sm:px-6 py-3 sm:py-4 fixed top-0 left-0 navbar-gradient backdrop-blur-md shadow-lg"
         role="navigation"
         aria-label="Main navigation"
       >
@@ -63,7 +63,7 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <button
-          className="theme-nav-link absolute right-2 p-2 transition-all duration-300 focus:outline-none focus:ring-2 hover:scale-110 md:hidden xs:right-3 sm:right-6"
+          className="theme-nav-link absolute right-12 p-2 transition-all duration-300 focus:outline-none focus:ring-2 hover:scale-110 md:hidden xs:right-14 sm:right-16"
           onClick={toggleMobileMenu}
           aria-label={mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
           aria-expanded={mobileMenuOpen}
@@ -121,9 +121,6 @@ export default function Navbar() {
                 </Link>
               )
             )}
-          <div className="pt-4 w-full flex justify-center">
-
-          </div>
         </div>
       </div>
 

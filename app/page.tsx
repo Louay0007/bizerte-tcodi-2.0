@@ -6,8 +6,12 @@ import ElementsSection from "@/components/ElementsSection";
 import AboutHero from "@/components/AboutHero";
 import VenueSection from "@/components/VenueSection";
 import TeamSection from "@/components/TeamSection";
+import ProgramPreview from "@/components/ProgramPreview";
+import PartnersSection from "@/components/PartnersSection";
+import FaqSection from "@/components/FaqSection";
+import ContactSection from "@/components/ContactSection";
+import { Skiper19 } from "@/components/ui/skiper-ui/skiper19";
 import { Skiper51 } from "@/components/ui/skiper-ui/skiper51";
-import Integrations2 from "@/components/ui/integrations-2";
 
 const venueGalleryItems = [
   {
@@ -124,6 +128,7 @@ export default function Home() {
       <LogoMarquee />
       <ElementsSection />
       <AboutHero />
+      <ProgramPreview />
       <VenueSection />
       <Skiper51
         images={venueGalleryItems.map(({ url, title, desc }) => ({
@@ -136,7 +141,10 @@ export default function Home() {
         description="From the opening ceremony to the final ideas, explore the moments that bring Bizerte Tcodi to life."
       />
       <TeamSection />
-      <Integrations2 />
+      <PartnersSection />
+      <Skiper19 />
+      <FaqSection />
+      <ContactSection />
     </div>
   );
 }

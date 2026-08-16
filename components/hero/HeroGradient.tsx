@@ -1,5 +1,3 @@
-import StarsBackground from "./StarsBackground";
-
 interface HeroGradientProps {
   children: React.ReactNode;
   backgroundType?: "image" | "video";
@@ -31,8 +29,6 @@ const HeroGradient = ({
         className={`h-screen w-full relative overflow-hidden hero-gradient ${className}`}
         style={style}
       >
-        {/* Animated stars background */}
-        <StarsBackground />
         {/* Solid #000000 background as the base layer */}
         <div className="absolute inset-0 z-0 bg-dark" />
         {/* The hero-gradient class now handles the background gradient. The image/video will be layered below. */}

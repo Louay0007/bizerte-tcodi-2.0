@@ -38,7 +38,7 @@ const faqs = [
 
 export default function FaqSection() {
   return (
-    <section className="theme-transition w-full bg-dark py-16 sm:py-24">
+    <section id="faq" className="theme-transition w-full bg-dark py-16 sm:py-24">
       <div className="mx-auto grid max-w-7xl gap-10 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16 lg:px-8">
         <div className="lg:sticky lg:top-20 lg:self-start">
           <div className="inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.3em] text-white/40">
@@ -53,7 +53,7 @@ export default function FaqSection() {
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/60 sm:text-lg">
             Everything you need to know before joining Bizerte Tcodi 3.0.
           </p>
-          <a href="mailto:contact@bizertetcodi.tn" className="theme-accent group mt-8 inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70">
+          <a href="mailto:bizerte.tcodi@gmail.com" className="theme-accent group mt-8 inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70">
             Ask us directly
             <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>

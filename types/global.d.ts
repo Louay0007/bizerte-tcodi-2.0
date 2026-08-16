@@ -10,6 +10,7 @@ interface Contributor {
   imageSrc: string;
   altText: string;
   size?: "sm" | "md" | "lg";
+  facebookUrl?: string;
 }
 
 interface NavbarLink {

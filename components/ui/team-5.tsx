@@ -1,12 +1,12 @@
 "use client";
 
-import { Github, Globe, Linkedin } from "lucide-react";
+import { Facebook, Github, Globe, Instagram, Linkedin } from "lucide-react";
 import gsap from "gsap";
 import { useRef, type ComponentType } from "react";
 
 import { cn } from "@/lib/utils";
 
-export type Team5SocialPlatform = "linkedin" | "github" | "website";
+export type Team5SocialPlatform = "facebook" | "github" | "instagram" | "linkedin" | "website";
 
 export interface Team5Member {
   id: string;
@@ -24,8 +24,10 @@ interface Team5Props {
 }
 
 const socialIcons: Record<Team5SocialPlatform, ComponentType<{ className?: string }>> = {
+  facebook: Facebook,
   linkedin: Linkedin,
   github: Github,
+  instagram: Instagram,
   website: Globe,
 };
 
@@ -79,17 +81,16 @@ export default function Team5({
           {description && <p className="mx-auto mt-5 max-w-xl text-base text-white/60 sm:text-lg">{description}</p>}
         </div>
 
-        <div ref={membersRef} className="flex h-[22rem] gap-1.5 sm:h-[30rem] sm:gap-2 md:h-[34rem]">
+        <div ref={membersRef} onMouseLeave={handleCardLeave} className="flex h-[22rem] gap-1.5 sm:h-[30rem] sm:gap-2 md:h-[34rem]">
           {members.map((member, index) => (
             <article
               key={member.id}
               onMouseEnter={() => handleCardEnter(index)}
-              onMouseLeave={handleCardLeave}
               className="theme-accent-border group relative min-w-0 flex-1 overflow-hidden rounded-xl border bg-white/5 shadow-sm transition-[box-shadow,border-color] duration-700 hover:shadow-[0_0_28px_var(--theme-glow)] focus-within:flex-[3]"
             >
               <img
                 src={member.image}
-                alt={`Mock portrait of ${member.name}`}
+                alt={`Portrait of ${member.name}`}
                 className="absolute inset-0 h-full w-full object-cover grayscale transition-all duration-700 group-hover:grayscale-0 group-focus-within:grayscale-0"
                 loading="lazy"
               />
@@ -114,7 +115,6 @@ export default function Team5({
             </article>
           ))}
         </div>
-        <p className="mt-5 text-center text-xs text-white/35">Committee profiles are placeholder data and will be updated when official details are available.</p>
       </div>
     </section>
   );

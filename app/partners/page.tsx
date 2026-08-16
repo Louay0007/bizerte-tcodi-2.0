@@ -1,5 +1,5 @@
-import LockedPage from "@/components/LockedPage";
+import PartnersExperience from "@/components/partners/PartnersExperience";
 
 export default function PartnersPage() {
-  return <LockedPage pageName="Partners" />;
+  return <PartnersExperience />;
 }

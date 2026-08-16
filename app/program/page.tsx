@@ -1,5 +1,5 @@
-import LockedPage from "@/components/LockedPage";
+import ProgramExperience from "@/components/program/ProgramExperience";
 
 export default function Program() {
-  return <LockedPage pageName="Program" />;
+  return <ProgramExperience />;
 }

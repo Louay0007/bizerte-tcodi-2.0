@@ -57,7 +57,7 @@ export default function Footer() {
                   </Link>
                 ))}
               </div>
-              <a href="mailto:contact@bizertetcodi.tn" className="text-sm text-white/60 transition-colors hover:text-[var(--theme-accent)]">contact@bizertetcodi.tn</a>
+              <a href="mailto:bizerte.tcodi@gmail.com" className="text-sm text-white/60 transition-colors hover:text-[var(--theme-accent)]">bizerte.tcodi@gmail.com</a>
             </div>
           </div>
         </div>

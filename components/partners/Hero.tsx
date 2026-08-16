@@ -1,6 +1,5 @@
 import HeroGradient from "../hero/HeroGradient";
 import HeroText from "../hero/HeroText";
-import StarsBackground from "../hero/StarsBackground";
 
 const Hero = () => {
   return (
@@ -8,7 +7,6 @@ const Hero = () => {
       backgroundType="image"
       backgroundSrc="/images/w33.jpg"
     >
-      <StarsBackground />
       <HeroText
      
         title="Sponsors & Partners"

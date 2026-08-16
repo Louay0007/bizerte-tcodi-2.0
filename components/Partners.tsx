@@ -3,7 +3,6 @@ import { contributors } from "@/constants";
 import Section from "./Section";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import StarsBackground from "./hero/StarsBackground";
 
 // Helper: get responsive logo size
 const getLogoSize = () => ({ mobile: 50, tablet: 80, desktop: 100 });

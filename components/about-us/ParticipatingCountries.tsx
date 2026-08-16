@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Section from "../Section";
 import { countries } from "@/constants";
-import StarsBackground from "../hero/StarsBackground";
 
 const ParticipatingCountries = () => {
   return (
@@ -10,7 +9,6 @@ const ParticipatingCountries = () => {
       description="17 Countries of the MENA Region"
       className="flex items-center justify-center"
     >
-      <StarsBackground />
       <div className="flex flex-wrap justify-center gap-12 items-center max-w-5xl">
         {countries.map((country, index) => (
           <div key={index} className="flex flex-col items-center group">

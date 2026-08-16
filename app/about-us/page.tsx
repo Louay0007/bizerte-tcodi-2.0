@@ -1,5 +1,5 @@
-import LockedPage from "@/components/LockedPage";
+import AboutExperience from "@/components/about-us/AboutExperience";
 
 export default function AboutUs() {
-  return <LockedPage pageName="About" />;
+  return <AboutExperience />;
 }

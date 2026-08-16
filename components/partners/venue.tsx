@@ -1,7 +1,6 @@
 import React from "react";
 import Section from "../Section";
 import Image from "next/image";
-import StarsBackground from "../hero/StarsBackground";
 
 const sponsors = {
   blue: [

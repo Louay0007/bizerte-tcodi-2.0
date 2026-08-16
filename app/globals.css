@@ -123,6 +123,9 @@
   --theme-glow: rgba(229, 231, 235, 0.28);
   --theme-text: #ffffff;
   --theme-text-muted: rgba(255, 255, 255, 0.6);
+  --theme-text-subtle: rgba(255, 255, 255, 0.45);
+  --theme-border: rgba(255, 255, 255, 0.12);
+  --theme-on-accent: #070707;
 }
 
 [data-theme="fire"] {
@@ -215,6 +218,7 @@
   html {
     scroll-behavior: smooth;
     background-color: var(--site-bg) !important;
+    color-scheme: dark;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
@@ -225,7 +229,6 @@
     background-color: var(--site-bg) !important;
     color: var(--theme-text);
     font-family: "SF Pro", sans-serif;
-    transition: background-color 350ms ease, color 350ms ease;
     will-change: auto;
     overflow-x: hidden;
   }
@@ -282,7 +285,7 @@
     width: 100%;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 1rem;
-    background: #000000;
+    background: var(--site-bg);
     padding: 0.75rem 0.9rem;
     color: white;
     font-size: 0.875rem;
@@ -300,7 +303,7 @@
 
   .contact-input:focus {
     border-color: var(--theme-accent);
-    background: #000000;
+    background: var(--site-bg);
     box-shadow: none;
   }
 
@@ -332,8 +335,19 @@
     transition-timing-function: ease;
   }
 
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      scroll-behavior: auto !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   .theme-nav-link {
-    color: rgba(255, 255, 255, 0.78);
+    color: var(--theme-text-muted);
     border-color: transparent;
   }
 
@@ -483,6 +497,10 @@
     .theme-transition *,
     .hero-theme-overlay {
       transition-duration: 0ms !important;
+    }
+
+    .animate-float-fade {
+      animation: none;
     }
   }
 
