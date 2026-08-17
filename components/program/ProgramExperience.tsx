@@ -45,7 +45,7 @@ const workflow = [
 ];
 
 export default function ProgramExperience() {
-  const rootRef = useRef<main>(null);
+  const rootRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
     const root = rootRef.current;

@@ -24,7 +24,7 @@ const outcomes = [
 ];
 
 export default function PartnersExperience() {
-  const rootRef = useRef<main>(null);
+  const rootRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
     const root = rootRef.current;

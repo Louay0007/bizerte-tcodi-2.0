@@ -11,12 +11,12 @@ const enquiryTypes = [
 
 export default function ContactSection() {
   const searchParams = useSearchParams();
-  const [enquiryType, setEnquiryType] = useState<(typeof enquiryTypes)[number]["value"]>(searchParams.get("enquiryType") === "partner" ? "partner" : "participant");
+  const [enquiryType, setEnquiryType] = useState<(typeof enquiryTypes)[number]["value"]>(searchParams?.get("enquiryType") === "partner" ? "partner" : "participant");
   const [submitted, setSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "sending" | "error">("idle");
 
   useEffect(() => {
-    if (searchParams.get("enquiryType") === "partner" || searchParams.get("enquiry") === "partner") {
+    if (searchParams?.get("enquiryType") === "partner" || searchParams?.get("enquiry") === "partner") {
       setEnquiryType("partner");
     }
   }, [searchParams]);

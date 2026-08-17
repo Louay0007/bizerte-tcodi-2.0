@@ -54,7 +54,7 @@ const mediaPlaceholder = (label: string, ratio: string) => (
 );
 
 export default function AboutExperience() {
-  const rootRef = useRef<main>(null);
+  const rootRef = useRef<HTMLElement>(null);
   const [activePillar, setActivePillar] = useState(0);
 
   useGSAP(() => {
