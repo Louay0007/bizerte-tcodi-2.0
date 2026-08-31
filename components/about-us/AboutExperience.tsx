@@ -124,15 +124,16 @@ export default function AboutExperience() {
   return (
     <main ref={rootRef} className="bg-dark pt-14 text-white sm:pt-16">
       <section className="theme-transition border-b border-white/10 bg-dark" data-about-hero>
-        <Image
-          src="/images/hero/bizerte-codi-banner.png"
-          alt="Bizerte Tcodi 3.0 event artwork"
-          width={1640}
-          height={624}
-          priority
-          sizes="100vw"
-          className="block h-auto w-full"
-        />
+        <div className="relative aspect-video w-full overflow-hidden bg-black sm:aspect-[1640/624]">
+          <Image
+            src="/images/hero/bizerte-codi-banner.png"
+            alt="Bizerte Tcodi 3.0 event artwork"
+            fill
+            priority
+            sizes="100vw"
+            className="object-contain"
+          />
+        </div>
         <div className="relative mx-auto max-w-7xl px-6 py-12 sm:px-10 sm:py-16 lg:px-16">
           <p className="flex items-center gap-2 font-mono text-[11px] uppercase tracking-[0.28em] text-white/55"><Route className="size-4 text-[var(--theme-accent)]" /> About Bizerte Tcodi</p>
           <h1 className="theme-accent mt-5 max-w-5xl font-avatar-airbender text-5xl leading-[0.86] tracking-wide sm:text-6xl lg:text-7xl">Built in Bizerte.<br />Made for problem solvers.</h1>

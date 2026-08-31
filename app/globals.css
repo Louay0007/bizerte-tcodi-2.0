@@ -386,7 +386,13 @@
   }
 
   .tunisia-image-border {
-    border: 10px solid #1a1a1a;
+    border: 4px solid #1a1a1a;
+  }
+
+  @media (min-width: 640px) {
+    .tunisia-image-border {
+      border-width: 8px;
+    }
   }
 
   .gold-arabic-pattern {
@@ -452,8 +458,15 @@
 
 
   .skiper51-carousel .swiper {
-    overflow: visible;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
     padding-bottom: 2.75rem;
+  }
+
+  .skiper51-carousel .swiper-wrapper,
+  .skiper51-carousel .swiper-slide {
+    min-width: 0;
   }
 
   .skiper51-carousel .swiper-pagination-bullet {

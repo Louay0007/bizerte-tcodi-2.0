@@ -3,6 +3,7 @@ interface HeroGradientProps {
   backgroundType?: "image" | "video";
   backgroundSrc?: string;
   className?: string;
+  mediaClassName?: string;
   style?: React.CSSProperties;
 }
 
@@ -11,6 +12,7 @@ const HeroGradient = ({
   backgroundType = "image",
   backgroundSrc = "/images/hero.jpg",
   className = "",
+  mediaClassName = "object-center",
   style,
 }: HeroGradientProps) => {
   const baseGradientStyle = {
@@ -26,7 +28,7 @@ const HeroGradient = ({
   if (backgroundType === "image") {
     return (
       <section
-        className={`h-screen w-full relative overflow-hidden hero-gradient ${className}`}
+        className={`relative h-[100svh] min-h-[36rem] w-full overflow-hidden hero-gradient sm:h-[100dvh] ${className}`}
         style={style}
       >
         {/* Solid #000000 background as the base layer */}
@@ -44,7 +46,7 @@ const HeroGradient = ({
   } else if (backgroundType === "video") {
     return (
       <section
-        className={`h-screen w-full relative overflow-hidden hero-gradient ${className}`}
+        className={`relative h-[100svh] min-h-[36rem] w-full overflow-hidden hero-gradient sm:h-[100dvh] ${className}`}
       >
         {/* Solid #000000 background as the base layer */}
         <div className="absolute inset-0 z-0 bg-dark" />
@@ -54,7 +56,8 @@ const HeroGradient = ({
           muted
           loop
           playsInline
-          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          className={`absolute inset-0 z-0 h-full w-full object-cover ${mediaClassName}`}
+          preload="metadata"
         >
           <source src={backgroundSrc} type="video/mp4" />
           Your browser does not support the video tag.

@@ -62,7 +62,7 @@ export function Skiper51({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.15 }}
         transition={{ duration: 0.45 }}
-        className="skiper51-carousel relative w-full"
+        className="skiper51-carousel relative min-w-0 max-w-full overflow-hidden"
       >
         <Swiper
           autoplay={{ delay: 3200, disableOnInteraction: false, pauseOnMouseEnter: true }}

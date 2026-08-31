@@ -12,6 +12,10 @@ export const navbarLinks: NavbarLink[] = [
     label: "Program",
   },
   {
+    route: "/challenge",
+    label: "Challenge",
+  },
+  {
     route: "/partners",
     label: "Partners",
   },

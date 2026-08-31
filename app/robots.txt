@@ -2,4 +2,4 @@ User-Agent: *
 Allow: /
 Disallow: 
 
-Sitemap: https://menasyp.ieee.tn/sitemap.xml
+Sitemap: https://bizerte-tcodi.ieee.tn/sitemap.xml

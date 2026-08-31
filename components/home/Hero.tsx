@@ -34,6 +34,7 @@ const Hero = () => {
     <HeroGradient
       backgroundType="video"
       backgroundSrc="/videos/hero.mp4"
+      mediaClassName="object-[52%_center] sm:object-center"
     >
       <div className="flex h-full flex-col items-center justify-end px-4 pb-10 sm:px-6 sm:pb-14 md:pb-16">
         <div className="mt-1 flex items-center gap-2 sm:gap-3" aria-label="Time until Bizerte Tcodi">

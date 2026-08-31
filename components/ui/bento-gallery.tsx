@@ -51,7 +51,7 @@ function ImageModal({ item, onClose }: { item: ImageItem; onClose: () => void })
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm"
+      className="fixed inset-0 z-[90] flex items-center justify-center bg-black px-3 py-4 sm:bg-black/90 sm:px-6 sm:py-6 sm:backdrop-blur-sm"
       onClick={onClose}
       role="dialog"
       aria-modal="true"
@@ -61,19 +61,19 @@ function ImageModal({ item, onClose }: { item: ImageItem; onClose: () => void })
         initial={{ scale: 0.9, y: 20 }}
         animate={{ scale: 1, y: 0 }}
         exit={{ scale: 0.9, y: 20 }}
-        className="relative w-full max-w-4xl p-4"
+        className="relative flex h-full w-full max-w-5xl items-center justify-center"
         onClick={(event) => event.stopPropagation()}
       >
         <img
           src={item.url}
           alt={item.title}
-          className="h-auto max-h-[90vh] w-full rounded-lg object-contain"
+          className="max-h-[calc(100dvh-2rem)] max-w-full object-contain sm:max-h-[calc(100dvh-3rem)]"
         />
       </motion.div>
       <button
         type="button"
         onClick={onClose}
-        className="absolute right-4 top-4 text-white/80 transition-colors hover:text-white"
+        className="absolute right-4 top-4 inline-flex size-11 items-center justify-center border border-white/25 bg-black text-white transition-colors hover:border-white sm:right-6 sm:top-6"
         aria-label="Close image view"
       >
         <X size={24} />
@@ -133,7 +133,7 @@ export default function InteractiveImageBentoGallery({
       <div ref={containerRef} className="mx-auto mt-12 w-full max-w-7xl px-4 sm:px-6 lg:px-8">
           <motion.div
             ref={gridRef}
-            className="grid auto-rows-[13rem] grid-cols-1 gap-4 sm:auto-rows-[15rem] sm:grid-cols-2 lg:auto-rows-[12rem] lg:grid-cols-4"
+            className="grid auto-rows-[15rem] grid-cols-1 gap-4 sm:auto-rows-[15rem] sm:grid-cols-2 lg:auto-rows-[12rem] lg:grid-cols-4"
             variants={containerVariants}
             initial="hidden"
             whileInView="visible"
@@ -154,8 +154,8 @@ export default function InteractiveImageBentoGallery({
                 aria-label={`View ${item.title}`}
               >
                 <img src={item.url} alt={item.title} className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
-                <div className="relative z-10 translate-y-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100">
+                <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-100 transition-opacity duration-500 sm:opacity-0 sm:group-hover:opacity-100" />
+                <div className="relative z-10 translate-y-0 opacity-100 transition-all duration-500 sm:translate-y-4 sm:opacity-0 sm:group-hover:translate-y-0 sm:group-hover:opacity-100">
                   <h3 className="text-lg font-bold text-white">{item.title}</h3>
                   <p className="mt-1 text-sm text-white/80">{item.desc}</p>
                 </div>
