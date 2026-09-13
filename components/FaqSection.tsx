@@ -12,27 +12,27 @@ import {
 const faqs = [
   {
     question: "Who can participate in Bizerte Tcodi?",
-    answer: "Bizerte Tcodi welcomes motivated university students who want to solve meaningful technical challenges, collaborate with peers, and build practical ideas.",
+    answer: "Bizerte Tcodi welcomes university students who enjoy algorithms, logical thinking, and solving coding problems under time pressure. Final eligibility rules will be published with registration.",
   },
   {
-    question: "When and where will the hackathon take place?",
-    answer: "Bizerte Tcodi 3.0 takes place on 19 September 2026 at ENIB in Bizerte, Tunisia. Event updates and the final schedule will be shared before registration opens.",
+    question: "When and where will the competition take place?",
+    answer: "Bizerte Tcodi 3.0 takes place on 19 September 2026 at ENIB in Bizerte, Tunisia. Registration is open and the final event schedule is available on this website.",
   },
   {
     question: "How do I register?",
-    answer: "Registration is coming soon. Follow our social channels and check this website for the official registration announcement.",
+    answer: "Registration is open now. Use the Register now button on this website to complete the official form.",
   },
   {
     question: "Do I need to come with a team?",
-    answer: "You may join with a team or connect with other participants during the event. The goal is to make collaboration accessible to everyone.",
+    answer: "The official participation format and team-size rules will be announced with registration. Check the published rules before forming your team.",
   },
   {
     question: "What should I bring?",
-    answer: "Bring your laptop, charger, student identification, and enthusiasm. We will share any additional requirements and event materials before the hackathon.",
+    answer: "Bring your laptop, charger, student identification, and a working coding environment. Supported languages and any additional requirements will be published before the competition.",
   },
   {
-    question: "Will there be mentorship and prizes?",
-    answer: "Yes. Participants will receive guidance from mentors and industry professionals, and the strongest solutions will be recognized during the closing ceremony.",
+    question: "How will solutions be evaluated?",
+    answer: "Solutions will be judged using the official test cases and competition rules. Correctness, execution limits, scoring details, rankings, and prizes will be confirmed before the event.",
   },
 ];
 
@@ -53,7 +53,7 @@ export default function FaqSection() {
           <p className="mt-6 max-w-md text-base leading-relaxed text-white/60 sm:text-lg">
             Everything you need to know before joining Bizerte Tcodi 3.0.
           </p>
-          <a href="mailto:bizerte.tcodi@gmail.com" className="theme-accent group mt-8 inline-flex items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70">
+          <a href="mailto:bizerte.tcodi@gmail.com" className="theme-accent group mt-8 inline-flex min-h-11 items-center gap-2 text-sm font-medium transition-opacity hover:opacity-70">
             Ask us directly
             <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
           </a>
@@ -63,10 +63,10 @@ export default function FaqSection() {
           <Accordion type="single" collapsible className="space-y-3">
             {faqs.map((faq, index) => (
               <AccordionItem key={faq.question} value={`faq-${index}`} className="theme-accent-border rounded-xl border bg-white/[0.03] px-5 transition-colors hover:bg-[var(--theme-accent-soft)] sm:px-6">
-                <AccordionTrigger className="py-5 text-base font-medium text-white hover:no-underline sm:text-lg">
-                  <span className="flex gap-4"><span className="theme-accent font-mono text-xs">0{index + 1}</span>{faq.question}</span>
+                <AccordionTrigger className="min-h-20 items-center py-5 text-base font-medium leading-snug text-white hover:no-underline sm:text-lg">
+                  <span className="flex min-w-0 items-baseline gap-4"><span className="theme-accent shrink-0 font-mono text-xs">0{index + 1}</span><span>{faq.question}</span></span>
                 </AccordionTrigger>
-                <AccordionContent className="max-w-2xl pb-5 pl-8 text-sm leading-relaxed text-white/60 sm:text-base">
+                <AccordionContent className="max-w-2xl pb-5 pl-8 pr-7 text-sm leading-relaxed text-white/60 sm:pl-9 sm:text-base">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>

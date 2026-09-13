@@ -1,9 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import SpotlightCard from "./ui/SpotlightCard";
 import { useHomeAnimation } from "@/hooks/useHomeAnimation";
 
+const mapEmbedUrl = "https://www.google.com/maps?q=ENIB%20Ecole%20Nationale%20d%27Ingenieurs%20de%20Bizerte&z=17&output=embed";
+const directionsUrl = "https://www.google.com/maps/search/?api=1&query=ENIB%20Ecole%20Nationale%20d%27Ingenieurs%20de%20Bizerte";
+
 export default function VenueSection() {
+  const [mapLoaded, setMapLoaded] = useState(false);
   const ref = useHomeAnimation<HTMLElement>({
     stagger: { selector: "[data-animate='block']" },
   });
@@ -14,16 +19,21 @@ export default function VenueSection() {
         <div className="flex flex-col md:flex-row items-center gap-10 md:gap-14">
           {/* Image in SpotlightCard — left side */}
           <SpotlightCard data-animate="block" className="p-0 shrink-0 w-full md:w-[55%] lg:w-[60%] overflow-hidden">
-            <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[420px]">
+            <div className="relative z-10 h-[250px] w-full sm:h-[300px] md:h-[350px] lg:h-[420px]" aria-busy={!mapLoaded}>
+              {!mapLoaded && (
+                <div className="absolute inset-0 z-10 flex items-center justify-center bg-[var(--site-surface-raised)] px-6 text-center">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/45">Loading interactive map…</p>
+                </div>
+              )}
               <iframe
-                title="ENIB location"
-                src="https://www.google.com/maps?q=37.2346358,9.8827781&z=17&output=embed"
-                width="100%"
-                height="100%"
+                title="Google Map showing ENIB in Bizerte"
+                src={mapEmbedUrl}
+                className="block h-full w-full"
                 style={{ border: 0 }}
                 allowFullScreen
-                loading="lazy"
+                loading="eager"
                 referrerPolicy="no-referrer-when-downgrade"
+                onLoad={() => setMapLoaded(true)}
               />
             </div>
           </SpotlightCard>
@@ -42,11 +52,11 @@ export default function VenueSection() {
               École Nationale d'Ingénieurs de Bizerte — Rue
               Tunis  1054, Bizerte, Tunisia. The main venue hosting
               Bizerte Tcodi, equipped with modern labs, workspaces, and all the
-              infrastructure needed for a 24–48h hackathon.
+              infrastructure needed for a focused coding competition.
             </p>
 
             <a
-              href="https://www.google.com/maps/place/ENIB+-+Ecole+Nationale+d%E2%80%99Ing%C3%A9nieurs+de+Bizerte/@37.23464,9.8802032,17z/data=!3m1!4b1!4m6!3m5!1s0x12e31ff1e14e28db:0xedb567ffe90f4f2e!8m2!3d37.2346358!4d9.8827781!16s%2Fg%2F112yg6p_4?entry=ttu&g_ep=EgoyMDI2MDcxMi4wIKXMDSoASAFQAw%3D%3D"
+              href={directionsUrl}
               target="_blank"
               rel="noreferrer noopener"
               className="theme-accent-border inline-flex items-center gap-2.5 rounded-full border px-6 py-3 text-sm font-medium text-white/80 transition-all duration-300 hover:bg-[var(--theme-accent-soft)] hover:text-[var(--theme-accent)] md:text-base"

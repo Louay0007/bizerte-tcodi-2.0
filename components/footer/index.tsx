@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Github, Instagram, Linkedin, Twitter } from "lucide-react";
 
-import { navbarLinks } from "@/constants";
+import { navbarLinks, registrationUrl } from "@/constants";
 
 const socials = [
   { href: "https://www.facebook.com/profile.php?id=61577092617315", label: "Facebook", Icon: Facebook },
@@ -25,7 +25,7 @@ export default function Footer() {
             <Image src="/logos/official-logo.png?v=2" alt="Bizerte Tcodi 3.0" width={720} height={720} className="h-auto w-20 drop-shadow-[0_0_12px_var(--theme-glow)] sm:w-24" />
             <div>
               <p className="font-avatar-airbender text-3xl tracking-wide text-white">Bizerte Tcodi</p>
-              <p className="mt-1 max-w-xs text-sm leading-relaxed text-white/50">A student-led hackathon for the next generation of Tunisian builders.</p>
+              <p className="mt-1 max-w-xs text-sm leading-relaxed text-white/50">A student-led coding competition for Bizerte&apos;s next generation of problem solvers.</p>
             </div>
           </div>
 
@@ -35,7 +35,7 @@ export default function Footer() {
               <nav aria-label="Footer navigation">
                 <ul className="flex flex-col gap-3">
                   {navbarLinks.map((link) => (
-                    <li key={link.route}><Link href={link.route} className="text-sm text-white/60 transition-colors hover:text-[var(--theme-accent)]">{link.label}</Link></li>
+                    <li key={link.route}><Link href={link.route} className="-mx-1 inline-flex min-h-11 items-center px-1 text-sm text-white/60 transition-colors hover:text-[var(--theme-accent)]">{link.label}</Link></li>
                   ))}
                 </ul>
               </nav>
@@ -45,19 +45,23 @@ export default function Footer() {
               <ul className="flex flex-col gap-3 text-sm text-white/60">
                 <li>19 September 2026</li>
                 <li>ENIB, Bizerte</li>
-                <li>Registration coming soon</li>
+                <li>
+                  <a href={registrationUrl} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center transition-colors hover:text-[var(--theme-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--theme-accent)]">
+                    Registration open
+                  </a>
+                </li>
               </ul>
             </div>
             <div className="flex flex-col gap-4">
-              <span className="text-xs font-medium uppercase tracking-[0.18em] text-white/90">Connect</span>
+              <span className="text-xs font-medium uppercase tracking-[0.18em] text-white/90">Bizerte Tcodi</span>
               <div className="flex flex-wrap gap-3">
                 {socials.map(({ href, label, Icon }) => (
-                  <Link key={label} href={href} aria-label={label} target="_blank" className="theme-accent-border flex size-8 items-center justify-center rounded-full border text-white/65 transition hover:bg-[var(--theme-accent)] hover:text-black">
+                  <Link key={label} href={href} aria-label={label} target="_blank" className="theme-accent-border flex size-11 items-center justify-center rounded-full border text-white/65 transition hover:bg-[var(--theme-accent)] hover:text-black focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--theme-accent)]">
                     <Icon size={16} strokeWidth={1.5} />
                   </Link>
                 ))}
               </div>
-              <a href="mailto:bizerte.tcodi@gmail.com" className="text-sm text-white/60 transition-colors hover:text-[var(--theme-accent)]">bizerte.tcodi@gmail.com</a>
+              <a href="mailto:bizerte.tcodi@gmail.com" className="inline-flex min-h-11 items-center text-sm text-white/60 transition-colors hover:text-[var(--theme-accent)]">bizerte.tcodi@gmail.com</a>
             </div>
           </div>
         </div>
@@ -67,7 +71,7 @@ export default function Footer() {
         <p className="theme-wordmark-muted pointer-events-none -mb-3 w-full select-none whitespace-nowrap text-center font-avatar-airbender text-[18vw] leading-none tracking-wide sm:text-[14vw]">Bizerte Tcodi</p>
         <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-between gap-3 px-6 py-5 text-xs text-white/40 sm:flex-row sm:px-10 lg:px-16">
           <p>© {new Date().getFullYear()} Bizerte Tcodi. All rights reserved.</p>
-          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="transition-colors hover:text-[var(--theme-accent)]">Back to top ↑</button>
+          <button type="button" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} className="min-h-11 px-2 transition-colors hover:text-[var(--theme-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--theme-accent)]">Back to top ↑</button>
         </div>
       </div>
     </footer>

@@ -23,8 +23,8 @@ const venueGalleryItems = [
   },
   {
     id: 2,
-    title: "A Room Full of Ideas",
-    desc: "Students gathered to learn, build, and connect.",
+    title: "A Room Full of Solvers",
+    desc: "Students gathered to analyze, code, and compete.",
     url: "/bento/2.jpg",
     span: "lg:col-span-2",
   },
@@ -59,7 +59,7 @@ const venueGalleryItems = [
   {
     id: 7,
     title: "On the Stage",
-    desc: "Ideas, stories, and the people behind them.",
+    desc: "Results, stories, and the people behind them.",
     url: "/bento/9.jpg",
     span: "",
   },
@@ -73,14 +73,14 @@ const venueGalleryItems = [
   {
     id: 9,
     title: "The Challenge Begins",
-    desc: "New perspectives and bold ideas take shape.",
+    desc: "The problem set opens and focused solving begins.",
     url: "/bento/10.jpg",
     span: "",
   },
   {
     id: 10,
-    title: "Ideas in Action",
-    desc: "A closer look at the Bizerte Tcodi experience.",
+    title: "Solutions in Motion",
+    desc: "A closer look at focused problem solving during Tcodi.",
     url: "/bento/11.jpg",
     span: "",
   },
@@ -138,7 +138,7 @@ export default function Home() {
           description: desc,
         }))}
         title="Be part of the story"
-        description="From the opening ceremony to the final ideas, explore the moments that bring Bizerte Tcodi to life."
+        description="From the opening ceremony to the final submissions, explore the moments that bring Bizerte Tcodi to life."
       />
       <TeamSection />
       <PartnersSection />

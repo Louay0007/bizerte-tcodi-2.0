@@ -4,5 +4,6 @@ export * from "./currencies";
 export * from "./team-members";
 export * from "./countries";
 export * from "./program";
+export * from "./registration";
 export * from "./sponsors";
 export * from "./visa";

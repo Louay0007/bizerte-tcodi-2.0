@@ -6,13 +6,14 @@ import { navbarLinks } from "@/constants";
 import { usePathname } from "next/navigation";
 import NavLink from "./NavLink";
 import LockedModal from "../LockedModal";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowUpRight, Lock, Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lockedPage, setLockedPage] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen((open) => !open);
@@ -27,6 +28,7 @@ export default function Navbar() {
 
     if (mobileMenuOpen) {
       document.body.style.overflow = "hidden";
+      requestAnimationFrame(() => menuRef.current?.querySelector<HTMLElement>("a, button")?.focus());
     }
 
     const closeOnEscape = (event: KeyboardEvent) => {
@@ -47,12 +49,12 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed inset-x-0 top-0 z-[70] border-b border-white/10 bg-black md:bg-black/80 md:backdrop-blur-xl">
+    <header className="fixed inset-x-0 top-0 z-[70] border-b border-transparent bg-transparent">
       <nav
         className="relative z-10 mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:h-20 sm:px-8 lg:px-12"
         aria-label="Main navigation"
       >
-        <Link href="/" className="group inline-flex min-w-0 items-center gap-2.5" aria-label="Bizerte Tcodi home">
+        <Link href="/" className="group inline-flex min-h-11 min-w-0 items-center gap-2.5" aria-label="Bizerte Tcodi home">
           <Image
             src="/logos/official-logo.png?v=2"
             alt=""
@@ -106,16 +108,16 @@ export default function Navbar() {
       </nav>
 
       <div
+        ref={menuRef}
         id="mobile-menu"
         className={`fixed inset-x-0 bottom-0 top-16 z-0 border-t border-white/10 bg-[#030303] transition-[opacity,transform] duration-300 ease-out sm:top-20 md:hidden ${
           mobileMenuOpen
             ? "translate-y-0 opacity-100"
             : "pointer-events-none -translate-y-3 opacity-0"
         }`}
-        role="dialog"
-        aria-modal="true"
         aria-label="Mobile navigation menu"
         aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
       >
         <div className="mx-auto flex h-full max-w-xl flex-col px-6 pb-8 pt-9">
           <div className="flex items-end justify-between gap-5 pb-6">

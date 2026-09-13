@@ -20,6 +20,9 @@
 # production
 /build
 
+# separate contest repository
+/contest-2026/
+
 # misc
 .DS_Store
 *.pem

@@ -19,7 +19,7 @@ export default function RootLayout({
         <title>Bizerte Tcodi</title>
         <link rel="icon" href="/logos/official-logo.png?v=2" />
         <link rel="apple-touch-icon" href="/logos/official-logo.png?v=2" />
-        <meta name="description" content="Bizerte Tcodi — The hackathon where Bizerte's brightest minds turn ideas into impact." />
+        <meta name="description" content="Bizerte Tcodi — Bizerte's student coding and algorithmic problem-solving competition." />
       </head>
       <body className="antialiased bg-dark">
         <ThemeProvider>

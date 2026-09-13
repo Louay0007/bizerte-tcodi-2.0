@@ -26,20 +26,22 @@ export default function ContactSection() {
     setStatus("sending");
 
     const form = event.currentTarget;
-    const response = await fetch("/api/contact", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
-    });
 
-    if (response.ok) {
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form).entries())),
+      });
+
+      if (!response.ok) throw new Error("Contact request failed");
+
       form.reset();
       setSubmitted(true);
       setStatus("idle");
-      return;
+    } catch {
+      setStatus("error");
     }
-
-    setStatus("error");
   };
 
   return (
@@ -100,16 +102,16 @@ export default function ContactSection() {
 
                 <input type="hidden" name="enquiryType" value={enquiryType} />
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <label className="space-y-1.5"><span className="text-sm font-medium text-white/80">Full name</span><input required name="name" placeholder="Your name" className="contact-input" /></label>
-                  <label className="space-y-1.5"><span className="text-sm font-medium text-white/80">Email address</span><input required type="email" name="email" placeholder="you@example.com" className="contact-input" /></label>
+                  <label className="space-y-1.5"><span className="text-sm font-medium text-white/80">Full name</span><input required name="name" autoComplete="name" placeholder="Your name" className="contact-input" /></label>
+                  <label className="space-y-1.5"><span className="text-sm font-medium text-white/80">Email address</span><input required type="email" inputMode="email" autoComplete="email" name="email" placeholder="you@example.com" className="contact-input" /></label>
                 </div>
                 <label className="space-y-1.5"><span className="text-sm font-medium text-white/80">Organization <span className="text-white/35">(optional)</span></span><input name="organization" placeholder="University, company, or organization" className="contact-input" /></label>
                 <label className="space-y-1.5"><span className="text-sm font-medium text-white/80">Your message</span><textarea required name="message" rows={4} placeholder={enquiryType === "partner" ? "Tell us how you would like to collaborate with Bizerte Tcodi." : "How can we help you prepare for Bizerte Tcodi?"} className="contact-input min-h-28 resize-y" /></label>
-                <button disabled={status === "sending"} type="submit" className="theme-accent-bg inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl text-sm font-semibold transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:cursor-wait disabled:opacity-70 sm:w-auto sm:px-5">
+                <button disabled={status === "sending"} type="submit" aria-busy={status === "sending"} className="theme-accent-bg inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl text-sm font-semibold transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white disabled:cursor-wait disabled:opacity-70 sm:w-auto sm:px-5">
                   {status === "sending" ? "Sending..." : "Send message"}
                   <Send className="size-4" />
                 </button>
-                {status === "error" && <p role="alert" className="text-sm text-red-300">We could not send your message. Please email us directly instead.</p>}
+                {status === "error" && <p role="alert" className="text-sm text-red-300">We could not send your message. Your details are still here—try again or email us directly.</p>}
               </form>
             )}
           </div>

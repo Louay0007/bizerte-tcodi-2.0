@@ -1,50 +1,30 @@
 export const sponsors: Sponsor[] = [
   {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
+    name: "LEONI",
+    image: "/images/sponsors/leoni.png",
   },
   {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
+    name: "S",
+    image: "/images/sponsors/s.png",
   },
   {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
+    name: "Betta",
+    image: "/images/sponsors/betta.png",
   },
   {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
+    name: "3D Craft",
+    image: "/images/sponsors/3d-craft.png",
   },
   {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
+    name: "MAD",
+    image: "/images/sponsors/mad.png",
   },
   {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
+    name: "إغش والعب",
+    image: "/images/sponsors/eghoch-welaab.png",
   },
   {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
-  },
-  {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
-  },
-  {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
-  },
-  {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
-  },
-  {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
-  },
-  {
-    name: "Google",
-    image: "/images/sponsors/google-pattern.png",
+    name: "ZI Arena",
+    image: "/images/sponsors/zi-arena.png",
   },
 ];

@@ -56,6 +56,7 @@ const HeroGradient = ({
           muted
           loop
           playsInline
+          poster="/images/hero/home-hero.jpg"
           className={`absolute inset-0 z-0 h-full w-full object-cover ${mediaClassName}`}
           preload="metadata"
         >

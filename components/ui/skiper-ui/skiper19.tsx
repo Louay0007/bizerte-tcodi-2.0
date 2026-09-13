@@ -1,10 +1,11 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import React, { useRef } from "react";
 
 const Skiper19 = () => {
   const ref = useRef<HTMLDivElement>(null);
+  const reducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
     target: ref,
   });
@@ -12,28 +13,29 @@ const Skiper19 = () => {
   return (
     <section
       ref={ref}
-      className="theme-transition mx-auto flex h-[250vh] w-full flex-col items-center overflow-hidden bg-dark px-4 text-white"
+      className="theme-transition mx-auto flex min-h-[52rem] w-full flex-col items-center overflow-hidden bg-dark px-6 py-24 text-white sm:min-h-[60rem] lg:h-[250vh] lg:px-4 lg:py-0"
     >
-      <div className="relative mt-32 flex w-fit flex-col items-center justify-center gap-5 text-center sm:mt-44">
-        <h1 className="theme-display-muted relative z-10 text-7xl font-medium tracking-[-0.08em] lg:text-9xl">
+      <div className="relative flex w-fit flex-col items-center justify-center gap-5 text-center lg:mt-44">
+        <h2 className="theme-display-muted relative z-10 text-6xl font-medium tracking-[-0.08em] sm:text-7xl lg:text-9xl">
           Be ready <br /> for our <br />
           hackathon
-        </h1>
+        </h2>
         <p className="theme-copy-muted relative z-10 max-w-2xl text-base font-medium sm:text-xl">
-The next challenge begins at Bizerte Tcodi 3.0
+          The next challenge begins at Bizerte Tcodi 3.0
         </p>
 
         <LinePath
           className="absolute -right-[40%] top-0 z-0"
           scrollYProgress={scrollYProgress}
+          reducedMotion={reducedMotion}
         />
       </div>
 
-      <div className="relative w-full translate-y-[125vh] overflow-hidden bg-dark pb-10 text-white before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-32 before:bg-gradient-to-b before:from-dark before:to-transparent after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-10 after:h-32 after:bg-gradient-to-t after:from-dark after:to-transparent">
-        <h1 className="relative z-0 mt-10 text-center text-[15.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[16.6vw]">
+      <div className="relative mt-20 w-full overflow-hidden bg-dark pb-10 text-white before:pointer-events-none before:absolute before:inset-x-0 before:top-0 before:z-10 before:h-32 before:bg-gradient-to-b before:from-dark before:to-transparent after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:z-10 after:h-32 after:bg-gradient-to-t after:from-dark after:to-transparent lg:mt-0 lg:translate-y-[125vh]">
+        <p className="relative z-0 mt-10 text-center text-[15.5vw] font-bold leading-[0.9] tracking-tighter lg:text-[16.6vw]">
           BIZERTE TCODI
-        </h1>
-        <div className="relative z-0 mt-80 flex w-full flex-col items-start gap-5 px-4 font-medium lg:mt-0 lg:flex-row lg:justify-between">
+        </p>
+        <div className="relative z-0 mt-16 flex w-full flex-col items-start gap-5 font-medium lg:mt-0 lg:flex-row lg:justify-between lg:px-4">
           <div className="flex w-full items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
             <p className="w-fit text-sm">
               bizerte, tunisia <br />
@@ -45,7 +47,7 @@ The next challenge begins at Bizerte Tcodi 3.0
           </div>
           <div className="flex w-full flex-wrap items-center justify-between gap-12 uppercase lg:w-fit lg:justify-center">
             <p className="w-fit text-sm">
-              registration <br /> coming soon
+              registration <br /> open now
             </p>
             <p className="w-fit text-right text-sm lg:text-left">
               24–48 hours <br /> of innovation
@@ -62,11 +64,14 @@ export { Skiper19 };
 const LinePath = ({
   className,
   scrollYProgress,
+  reducedMotion,
 }: {
   className: string;
   scrollYProgress: any;
+  reducedMotion: boolean | null;
 }) => {
   const pathLength = useTransform(scrollYProgress, [0, 1], [0.5, 1]);
+  const strokeDashoffset = useTransform(pathLength, (value) => 1 - value);
 
   return (
     <svg
@@ -83,9 +88,9 @@ const LinePath = ({
         stroke="currentColor"
         strokeWidth="16"
         className="theme-accent"
-        style={{
+        style={reducedMotion ? { pathLength: 1, strokeDashoffset: 0 } : {
           pathLength,
-          strokeDashoffset: useTransform(pathLength, (value) => 1 - value),
+          strokeDashoffset,
         }}
       />
     </svg>

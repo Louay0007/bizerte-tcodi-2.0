@@ -2,10 +2,9 @@
 
 import { motion } from "framer-motion";
 import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
-import { Autoplay, EffectCreative, Navigation, Pagination } from "swiper/modules";
+import { EffectCreative, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import "swiper/css/autoplay";
 import "swiper/css/effect-creative";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -65,7 +64,6 @@ export function Skiper51({
         className="skiper51-carousel relative min-w-0 max-w-full overflow-hidden"
       >
         <Swiper
-          autoplay={{ delay: 3200, disableOnInteraction: false, pauseOnMouseEnter: true }}
           centeredSlides
           effect="creative"
           grabCursor
@@ -76,7 +74,7 @@ export function Skiper51({
             prev: { shadow: true, translate: ["-18%", 0, -300] },
             next: { translate: ["100%", 0, 0] },
           }}
-          modules={[EffectCreative, Pagination, Navigation, Autoplay]}
+          modules={[EffectCreative, Pagination, Navigation]}
         >
           {images.map((image) => (
             <SwiperSlide key={image.src}>
@@ -90,10 +88,10 @@ export function Skiper51({
             </SwiperSlide>
           ))}
         </Swiper>
-        <button type="button" aria-label="Previous image" className="skiper51-prev theme-accent-border absolute left-7 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border bg-black/60 p-2 text-white backdrop-blur transition hover:bg-[var(--theme-accent-soft)] hover:text-[var(--theme-accent)] sm:block">
+        <button type="button" aria-label="Previous image" className="skiper51-prev theme-accent-border absolute left-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full border bg-black/70 text-white backdrop-blur transition hover:bg-[var(--theme-accent-soft)] hover:text-[var(--theme-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:left-7">
           <ChevronLeftIcon className="size-5" />
         </button>
-        <button type="button" aria-label="Next image" className="skiper51-next theme-accent-border absolute right-7 top-1/2 z-10 hidden -translate-y-1/2 rounded-full border bg-black/60 p-2 text-white backdrop-blur transition hover:bg-[var(--theme-accent-soft)] hover:text-[var(--theme-accent)] sm:block">
+        <button type="button" aria-label="Next image" className="skiper51-next theme-accent-border absolute right-2 top-1/2 z-10 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-full border bg-black/70 text-white backdrop-blur transition hover:bg-[var(--theme-accent-soft)] hover:text-[var(--theme-accent)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white sm:right-7">
           <ChevronRightIcon className="size-5" />
         </button>
         </motion.div>

@@ -16,6 +16,7 @@ import {
   CasesWithInfiniteScroll,
   type PartnerLogo,
 } from "@/components/ui/cases-with-infinite-scroll";
+import { sponsors } from "@/constants/sponsors";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,13 +47,13 @@ const outcomes = [
   {
     number: "01",
     title: "Meet emerging talent",
-    copy: "Connect with driven students who are ready to learn, build, and put ideas into practice.",
+    copy: "Connect with driven students who are ready to reason, code, and compete under pressure.",
     icon: UsersRound,
   },
   {
     number: "02",
-    title: "Support local innovation",
-    copy: "Give practical ideas the space, guidance, and visibility needed to become useful prototypes.",
+    title: "Support technical excellence",
+    copy: "Help students strengthen their algorithms, coding discipline, and competitive problem-solving skills.",
     icon: Lightbulb,
   },
   {
@@ -171,7 +172,7 @@ export default function PartnersExperience() {
           </div>
 
           <div className="mt-14 grid gap-5 md:grid-cols-2 lg:mt-20 lg:grid-cols-12">
-            <article className="border border-white/12 bg-[var(--site-surface-raised)] p-6 sm:p-8 md:col-span-2 lg:col-span-6">
+            <article className="border border-white/12 bg-[var(--site-surface-raised)] p-6 sm:p-8 md:col-span-2 lg:col-span-8">
               <div className="flex items-center justify-between gap-4">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--theme-accent)]">
                   Organizing collective
@@ -201,7 +202,7 @@ export default function PartnersExperience() {
                 ))}
               </div>
             </article>
-            <article className="flex flex-col border border-white/12 bg-[var(--site-surface-raised)] p-6 sm:p-8 lg:col-span-3">
+            <article className="flex flex-col border border-white/12 bg-[var(--site-surface-raised)] p-6 sm:p-8 lg:col-span-4">
               <div className="flex items-center justify-between gap-3">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--theme-accent)]">
                   Institutional partner
@@ -220,23 +221,30 @@ export default function PartnersExperience() {
                 to Tcodi.
               </p>
             </article>
-            <article className="flex flex-col border border-dashed border-white/20 bg-[var(--site-surface-raised)] p-6 sm:p-8 lg:col-span-3">
+            <article className="flex flex-col border border-white/12 bg-[var(--site-surface-raised)] p-6 sm:p-8 md:col-span-2 lg:col-span-12">
               <div className="flex items-center justify-between gap-3">
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--theme-accent)]">
                   Sponsors
                 </p>
-                <span className="font-mono text-[10px] text-white/35">Open</span>
+                <span className="font-mono text-[10px] text-white/35">07 partners</span>
               </div>
-              <div className="mt-8 flex min-h-44 flex-1 items-center justify-center border border-dashed border-white/15 bg-black/10 px-5 text-center">
-                <p className="font-avatar-airbender text-2xl leading-tight tracking-wide text-white/50">
-                  Your mark could
-                  <br />
-                  live here.
-                </p>
+              <div className="mt-8 grid flex-1 grid-cols-2 border-l border-t border-white/10 sm:grid-cols-4 lg:grid-cols-7">
+                {sponsors.map((sponsor) => (
+                  <div
+                    key={sponsor.name}
+                    className="flex min-h-32 items-center justify-center border-b border-r border-white/10 bg-black/15 p-5"
+                  >
+                    <img
+                      src={sponsor.image}
+                      alt={`${sponsor.name} logo`}
+                      className="max-h-20 max-w-full object-contain"
+                    />
+                  </div>
+                ))}
               </div>
               <p className="mt-5 text-sm leading-relaxed text-white/58">
-                Sponsor spaces are open for organizations ready to invest in
-                emerging technical talent.
+                Their support helps Tcodi bring ambitious students together to
+                learn, compete, and build.
               </p>
             </article>
           </div>
@@ -343,7 +351,7 @@ export default function PartnersExperience() {
                 Shape the partnership
               </h3>
               <p className="mt-4 leading-relaxed text-white/60">
-                Build a focused contribution around your goals and Tcodi&apos;s
+                Shape a focused contribution around your goals and Tcodi&apos;s
                 community.
               </p>
             </article>

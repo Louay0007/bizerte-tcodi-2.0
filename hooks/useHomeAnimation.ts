@@ -37,7 +37,7 @@ export function useHomeAnimation<T extends HTMLElement = HTMLElement>(
   useGSAP(
     () => {
       const root = ref.current;
-      if (!root) return;
+      if (!root || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
       const ctx = gsap.context(() => {
         // Entrance: container rises + fades in on mount

@@ -16,8 +16,8 @@ const ActionButton = ({
   disabled,
 }: ActionButtonProps) => {
   const sizeClasses = {
-    sm: "text-xs px-3 py-1.5 h-8",
-    md: "text-sm px-4 py-2 h-10",
+    sm: "text-xs px-3 py-1.5 h-11",
+    md: "text-sm px-4 py-2 h-11",
     lg: "text-base px-5 py-2.5 h-12",
   };
 

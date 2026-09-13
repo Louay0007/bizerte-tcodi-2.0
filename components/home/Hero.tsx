@@ -1,11 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Image from "next/image";
 import { Calendar, MapPin } from "lucide-react";
-import ActionButton from "../ActionButton";
 import HeroGradient from "../hero/HeroGradient";
-
+import { registrationUrl } from "@/constants";
 
 const Hero = () => {
   const [timeLeft, setTimeLeft] = useState<{ days: number; hours: number; minutes: number } | null>(null);
@@ -47,7 +45,12 @@ const Hero = () => {
               <span className="theme-accent block text-xl font-bold leading-none tabular-nums sm:text-2xl">{String(value).padStart(2, "0")}</span>
               <span className="mt-1 block font-mono text-[8px] uppercase tracking-[0.2em] text-white/55 sm:text-[9px]">{label}</span>
             </div>
-          )) : <span className="text-sm text-white/70">Loading countdown...</span>}
+          )) : ["days", "hours", "minutes"].map((label) => (
+            <div key={label} className="min-w-16 border border-white/15 bg-black/35 px-3 py-2 text-center backdrop-blur-sm sm:min-w-20 sm:px-4">
+              <span className="block text-xl font-bold leading-none text-white/45 sm:text-2xl">--</span>
+              <span className="mt-1 block font-mono text-[8px] uppercase tracking-[0.2em] text-white/55 sm:text-[9px]">{label}</span>
+            </div>
+          ))}
         </div>
         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mt-4">
           <div className="flex items-center">
@@ -60,11 +63,14 @@ const Hero = () => {
           </div>
 
         </div>
-        <ActionButton
-          text="Registration Coming Soon"
-          className="mt-4"
-          disabled={false}
-        />
+        <a
+          href={registrationUrl}
+          target="_blank"
+          rel="noreferrer"
+          className="theme-accent-bg mt-4 inline-flex min-h-11 items-center border border-transparent px-5 py-2 text-sm font-bold shadow-[0_0_20px_var(--theme-glow)] transition hover:brightness-110 active:translate-y-px focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+        >
+          Register now
+        </a>
       </div>
     </HeroGradient>
   );

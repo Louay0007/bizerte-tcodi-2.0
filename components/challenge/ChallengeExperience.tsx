@@ -65,10 +65,10 @@ export default function ChallengeExperience() {
           <div className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_22rem] lg:items-end">
             <div>
               <h1 className="theme-accent font-avatar-airbender text-6xl leading-[0.84] tracking-wide sm:text-7xl lg:text-8xl">
-                Your challenge.<br />One clear brief.
+                Your problems.<br />One running clock.
               </h1>
               <p className="mt-7 max-w-2xl text-lg leading-relaxed text-white/65">
-                The official problem statement, deliverables, constraints, and judging criteria will appear here when the challenge is revealed.
+                The official problem set, input and output formats, constraints, examples, and scoring rules will appear here when the competition begins.
               </p>
             </div>
 
@@ -94,14 +94,14 @@ export default function ChallengeExperience() {
                 <FileText className="size-4" />
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em]">Official document</p>
               </div>
-              <h2 className="mt-2 text-2xl font-semibold tracking-normal sm:text-3xl">Challenge brief</h2>
+              <h2 className="mt-2 text-2xl font-semibold tracking-normal sm:text-3xl">Official problem set</h2>
             </div>
             {documentAvailable && (
               <div className="flex items-center gap-2">
                 <button
                   type="button"
                   onClick={openFullscreen}
-                  className="inline-flex size-10 items-center justify-center border border-white/18 text-white/70 transition-colors hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
+                  className="inline-flex size-11 items-center justify-center border border-white/18 text-white/70 transition-colors hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
                   aria-label="View PDF in fullscreen"
                   title="Fullscreen"
                 >
@@ -111,7 +111,7 @@ export default function ChallengeExperience() {
                   href={challengeDocument}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex size-10 items-center justify-center border border-white/18 text-white/70 transition-colors hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
+                  className="inline-flex size-11 items-center justify-center border border-white/18 text-white/70 transition-colors hover:border-[var(--theme-accent)] hover:text-[var(--theme-accent)]"
                   aria-label="Open PDF in a new tab"
                   title="Open in new tab"
                 >
@@ -120,7 +120,7 @@ export default function ChallengeExperience() {
                 <a
                   href={challengeDocument}
                   download
-                  className="inline-flex h-10 items-center gap-2 border border-[var(--theme-accent)] bg-[var(--theme-accent)] px-4 text-sm font-semibold text-[var(--theme-on-accent)] transition-opacity hover:opacity-80"
+                  className="inline-flex h-11 items-center gap-2 border border-[var(--theme-accent)] bg-[var(--theme-accent)] px-4 text-sm font-semibold text-[var(--theme-on-accent)] transition-opacity hover:opacity-80"
                 >
                   <Download className="size-4" />
                   Download
@@ -134,7 +134,7 @@ export default function ChallengeExperience() {
               <div className="absolute inset-0 flex items-center justify-center" role="status">
                 <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-white/50">
                   <RefreshCw className="size-4 animate-spin text-[var(--theme-accent)]" />
-                  Checking the brief
+                  Checking the problem set
                 </div>
               </div>
             )}
@@ -142,7 +142,7 @@ export default function ChallengeExperience() {
             {documentAvailable === true && (
               <iframe
                 src={`${challengeDocument}#view=FitH&toolbar=0&navpanes=0`}
-                title="Bizerte Tcodi official challenge brief"
+                title="Bizerte Tcodi official problem set"
                 className="absolute inset-0 h-full w-full bg-white"
               />
             )}
@@ -153,10 +153,10 @@ export default function ChallengeExperience() {
                   <div className="mx-auto flex size-16 items-center justify-center border border-[var(--theme-accent)] bg-[var(--theme-accent-soft)] text-[var(--theme-accent)]">
                     <CalendarClock className="size-7" strokeWidth={1.5} />
                   </div>
-                  <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--theme-accent)]">Brief sealed</p>
+                  <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.24em] text-[var(--theme-accent)]">Problem set sealed</p>
                   <h3 className="mt-4 font-avatar-airbender text-4xl tracking-wide text-white sm:text-5xl">Not revealed yet.</h3>
                   <p className="mx-auto mt-5 max-w-md leading-relaxed text-white/55">
-                    The official challenge will unlock here during the opening session. Keep this page ready and refresh after the announcement.
+                    The official coding problems will unlock when the competition begins. Keep this page ready and refresh after the announcement.
                   </p>
                   <button
                     type="button"
@@ -174,11 +174,11 @@ export default function ChallengeExperience() {
           <div className="mt-4 grid border border-white/10 bg-[var(--site-surface)] md:grid-cols-3 md:divide-x md:divide-white/10">
             <div className="flex gap-3 p-4 sm:p-5">
               <ShieldCheck className="mt-0.5 size-4 shrink-0 text-[var(--theme-accent)]" />
-              <div><p className="text-sm font-medium">Single source of truth</p><p className="mt-1 text-xs leading-relaxed text-white/45">Always work from the latest brief shown here.</p></div>
+              <div><p className="text-sm font-medium">Official problem set</p><p className="mt-1 text-xs leading-relaxed text-white/45">Always work from the latest version published here.</p></div>
             </div>
             <div className="flex gap-3 border-t border-white/10 p-4 sm:p-5 md:border-t-0">
               <FileText className="mt-0.5 size-4 shrink-0 text-[var(--theme-accent)]" />
-              <div><p className="text-sm font-medium">Read every requirement</p><p className="mt-1 text-xs leading-relaxed text-white/45">Review constraints and deliverables before building.</p></div>
+              <div><p className="text-sm font-medium">Read every constraint</p><p className="mt-1 text-xs leading-relaxed text-white/45">Check formats, limits, examples, and edge cases before coding.</p></div>
             </div>
             <div className="flex gap-3 border-t border-white/10 p-4 sm:p-5 md:border-t-0">
               <Download className="mt-0.5 size-4 shrink-0 text-[var(--theme-accent)]" />
